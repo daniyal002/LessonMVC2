@@ -1,5 +1,7 @@
 ﻿using LessonMVC2.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LessonMVC2
 {
@@ -20,5 +22,18 @@ namespace LessonMVC2
             return products;
         }
 
+        public Product TryGetById(int id)
+        {
+
+            return products.FirstOrDefault(producte => producte.Id == id);
+            //foreach(var product in products)
+            //{
+            //    if (product.Id == id)
+            //    {
+            //        return product;
+            //    }
+            //}
+            //return null;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace LessonMVC2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}");
+                    pattern: "{controller=Product}/{action=Index}/{id?}");
             });
         }
     }

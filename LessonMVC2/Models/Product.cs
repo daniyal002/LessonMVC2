@@ -3,7 +3,7 @@
     public class Product
     {
         private static int _id { get; set; } = 0;
-        private int Id { get; set; }
+        public int Id { get; set; }
         private string Name { get; set; }
         private double Cost { get; set; }
 
@@ -18,6 +18,6 @@
             _id++;
         }
 
-        public override string ToString() => $"Id{Id} \nName{Name} \nCost{Cost}";
+        public override string ToString() => $"Id{Id} \nName{Name} \nCost{Cost} \nDescription{Description}";
     }
 }

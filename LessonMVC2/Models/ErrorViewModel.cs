@@ -1,5 +1,3 @@
-using System;
-
 namespace LessonMVC2.Models
 {
     public class ErrorViewModel

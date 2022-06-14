@@ -1,26 +1,33 @@
 ﻿using LessonMVC2.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LessonMVC2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+
+        private readonly ProductRepository productRepository;
+        public HomeController()
         {
-            _logger = logger;
+            productRepository = new ProductRepository();
         }
 
-        public IActionResult Index()
+
+        public string Index()
         {
-            return View();
+            var res = "";
+            foreach (var product in productRepository.GetAll())
+            {
+                res += product + "\n\n";
+            }
+            return res;
         }
 
         public IActionResult Privacy()

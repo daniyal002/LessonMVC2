@@ -20,14 +20,10 @@ namespace LessonMVC2.Controllers
         }
 
 
-        public string Index()
+        public IActionResult Index()
         {
-            var res = "";
-            foreach (var product in productRepository.GetAll())
-            {
-                res += product + "\n\n";
-            }
-            return res;
+            var products = productRepository.GetAll();
+            return View(products);
         }
 
         public IActionResult Privacy()
